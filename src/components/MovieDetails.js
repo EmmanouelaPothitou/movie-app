@@ -1,5 +1,9 @@
 import React, { useEffect } from 'react';
 import { useState } from 'react';
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
+import Image from 'react-bootstrap/Image'
 
 
 
@@ -16,11 +20,12 @@ function MovieDetails({ id }) {
                 "plot": "full"
             }
             url.search = new URLSearchParams(params).toString()
-        
+
             try {
                 const res = await fetch(url);
                 const data = await res.json();
                 setResult(data);
+
             } catch (err) {
                 console.log(err);
             }
@@ -28,20 +33,29 @@ function MovieDetails({ id }) {
         getMovie();
     }, [id])
 
-    
+
     return (
-        <div>
-            <img src={result.Poster} alt="poster" />
-            <h3>{result.Title}</h3>
-            <p>{result.Genre}</p>
-            <p>IMDB Rating:{result.imdbRating}</p>
-            <p>Actors: {result.Actors}</p>
-            <p>{result.Director},{result.Writer}</p>
-            <p>{result.Plot}</p>
-            <p>{result.Runtime}</p>
-            <p>{result.Released}</p>
-            <p>{result.Awards}</p>
-        </div>
+        <Container className='MovieDetails'>
+            <Row>
+                <Col >
+                    <Image className='posterDetails' src={result.Poster} alt="poster" />
+                </Col>
+                <Col className='details'>
+                    <h3 className='titleDetails'>{result.Title}</h3>
+                    <p className='genre'><strong>{result.Genre}</strong></p>
+                    <p><strong>IMDB Rating: </strong><span role='img'>⭐</span>{result.imdbRating}/10</p>
+                    <p className='actors'><strong>Actors: </strong>{result.Actors}</p>
+                    <p><strong>Director: </strong>{result.Director}, <strong>Writer: </strong>{result.Writer}</p>
+                    <p>{result.Plot}</p>
+                    {result.totalSeasons? <p className='seasons'><strong>Seasons: </strong>{result.totalSeasons}</p>: null}
+                    {result.totalSeasons ?
+                    <p className='duration'><strong>Duration: </strong>{result.Runtime}/episode</p>:
+                    <p className='duration'><strong>Duration: </strong>{result.Runtime}</p>}
+                    <p className='release'><strong>Release Date: </strong>{result.Released}</p>
+                    <p>{result.Awards}</p>
+                </Col>
+            </Row>
+        </Container>
     )
 }
 

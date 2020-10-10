@@ -13,7 +13,6 @@ function SearchBox({ onSearch }) {
 
     return (
         <form className="form" onSubmit={handleSubmitButtonClick}>
-            <label className="label" htmlFor="query">Movie Search</label>
             <input className="input"
                 type="text"
                 placeholder="Search a Movie.."
@@ -21,7 +20,6 @@ function SearchBox({ onSearch }) {
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
             />
-            <button className="button" type="submit" />
         </form>
     )
 }

@@ -1,6 +1,77 @@
-img{
-  height: 100px;
+*{
+  background-color: #393b44;
+  box-sizing: border-box;
+  color: #d6e0f0;
+  font-weight: 300;
 }
-.title {
+
+
+
+.App {
+  
+}
+.input {
+  background-color: #f1f3f8;
+  color: #393b44;
+  width: 70%;
+  height: 50px;
+  border-radius: 20px;
+  margin: 0 auto;
+  display: block;
   font-size: 20px;
+  padding: 10px;
+  margin-top: 8%;
+  margin-bottom: 5%;
+  outline: none;
+}
+
+
+.poster {
+  height: 300px;
+  
+}
+
+
+.title {
+  font-size: 100%;
+}
+.col-12 {
+  text-align: center;
+}
+
+
+.titleDetails {
+  font-weight: 700;
+  text-align: left;
+}
+
+.MovieDetails {
+  margin-bottom: 4%;
+}
+.col {
+  text-align: center;
+}
+.col.details {
+  text-align: justify;
+}
+h3.title{
+  margin: 0;
+}
+p.genre {
+  margin-bottom: 0;
+}
+p.actors {
+  margin-bottom: 0;
+}
+p.duration {
+  margin-bottom: 0;
+}
+p.release {
+  margin-bottom: 0;
+}
+p.seasons {
+  margin-bottom: 0;
+}
+img.posterDetails {
+  height: 100%;
 }

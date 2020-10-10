@@ -4,11 +4,13 @@ import './App.css';
 import MovieList from './components/MovieList';
 import SearchBox from './components/SearchBox.js';
 import MovieDetails from './components/MovieDetails.js';
+import 'bootstrap/dist/css/bootstrap.min.css'
+
 
 function App() {
   const [movies, setMovies] = useState([]);
   const [selected, setSelected] = useState();
-  
+
   const searchMovies = async (query) => {
     console.log("will search for", query)
     const url = new URL(`http://www.omdbapi.com/`)
@@ -29,10 +31,8 @@ function App() {
     }
   }
 
-
   return (
     <div className="App">
-      <h1 className="app-header">title</h1>
       <SearchBox onSearch={(q) => searchMovies(q)} />
 
       <div>
