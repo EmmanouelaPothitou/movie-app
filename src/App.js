@@ -24,7 +24,7 @@ function App() {
       const res = await fetch(url);
       const data = await res.json();
       console.log(data);
-      setMovies(data.Search);
+      (data.Search) ? setMovies(data.Search): setMovies(data);
       setSelected(null);
     } catch (err) {
       console.error(err);

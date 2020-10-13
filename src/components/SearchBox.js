@@ -9,16 +9,17 @@ function SearchBox({ onSearch }) {
         e.preventDefault();
         console.log("will call onSearch fn which we received from props");
         onSearch(query)
+        setQuery('');
     }
 
     return (
         <form className="form" onSubmit={handleSubmitButtonClick}>
             <input className="input"
                 type="text"
-                placeholder="Search a Movie.."
+                placeholder="📽️ Search a Movie.."
                 name="query"
                 value={query}
-                onChange={(e) => setQuery(e.target.value)}
+                onChange={(e) =>setQuery(e.target.value)}
             />
         </form>
     )

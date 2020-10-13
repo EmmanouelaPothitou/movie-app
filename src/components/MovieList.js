@@ -6,7 +6,9 @@ import Col from 'react-bootstrap/Col'
 import Image from 'react-bootstrap/Image'
 
 function MovieList({ movies, onSelect }) {
-
+    if (movies.Error) {
+        return (<p className='error'>{movies.Error}</p>)
+    }
     const movieList = movies.filter(movie => (movie.Poster && movie.Poster!=="N/A")).map(movie => {
         return <Col xs={12} sm={4} md={3} lg={2} key={movie.imdbID} 
                 onClick={() => onSelect(movie.imdbID)}>

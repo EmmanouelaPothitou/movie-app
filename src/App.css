@@ -20,7 +20,7 @@
   display: block;
   font-size: 20px;
   padding: 10px;
-  margin-top: 8%;
+  margin-top: 6%;
   margin-bottom: 5%;
   outline: none;
 }
@@ -74,4 +74,9 @@ p.seasons {
 }
 img.posterDetails {
   height: 100%;
+}
+
+.error{
+  text-align: center;
+  font-size: 120%;
 }
