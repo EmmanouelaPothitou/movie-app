@@ -13,7 +13,7 @@ function App() {
 
   const searchMovies = async (query) => {
     console.log("will search for", query)
-    const url = new URL(`http://www.omdbapi.com/`)
+    const url = new URL(`https://www.omdbapi.com/`)
     const params = {
       "apikey": "a20a37c4",
       "s": query,

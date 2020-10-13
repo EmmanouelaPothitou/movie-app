@@ -13,7 +13,7 @@ function MovieDetails({ id }) {
 
     useEffect(() => {
         const getMovie = async () => {
-            const url = new URL(`http://www.omdbapi.com/`)
+            const url = new URL(`https://www.omdbapi.com/`)
             const params = {
                 "apikey": "a20a37c4",
                 "i": id,
